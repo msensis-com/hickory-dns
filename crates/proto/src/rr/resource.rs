@@ -75,7 +75,6 @@ const MDNS_ENABLE_CACHE_FLUSH: u16 = 1 << 15;
 #[derive(Eq, Debug, Clone)]
 // TODO: make Record carry a lifetime for more efficient storage options in the future
 pub struct Record<R: RecordData = RData> {
-    #[cfg_attr(feature = "serde", serde(alias = "name"))]
     name_labels: Name,
     dns_class: DNSClass,
     ttl: u32,
