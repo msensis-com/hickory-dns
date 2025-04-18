@@ -27,6 +27,7 @@ use crate::serialize::binary::*;
 ///
 /// This specifies the type of data in the RData field of the Resource Record
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+#[cfg_attr(feature = "serde", serde(tag = "type", content = "data"))]
 #[derive(Debug, PartialEq, Eq, Hash, Copy, Clone)]
 #[allow(dead_code)]
 #[non_exhaustive]

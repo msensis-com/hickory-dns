@@ -49,6 +49,7 @@ use crate::{
 ///          65535            Reserved
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+#[cfg_attr(feature = "serde", serde(tag = "type", content = "data"))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
 pub enum CertType {
     /// 0, 255, 65535            Reserved
