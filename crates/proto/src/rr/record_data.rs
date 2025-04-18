@@ -60,7 +60,7 @@ use crate::dnssec::rdata::DNSSECRData;
 /// length (including the length octet).
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
-#[cfg_attr(feature = "serde", serde(tag = "type", content = "data"))]
+#[cfg_attr(feature = "serde", serde(tag = "type", content = "content"))]
 #[derive(Debug, EnumAsInner, PartialEq, Clone, Eq)]
 #[non_exhaustive]
 pub enum RData {
