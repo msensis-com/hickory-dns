@@ -76,6 +76,7 @@ macro_rules! name_rdata {
     ($name: ident) => {
         #[doc = stringify!(new type for the RecordData of $name)]
         #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+        #[cfg_attr(feature = "serde", serde(transparent))]
         #[derive(Debug, PartialEq, Eq, Hash, Clone)]
         pub struct $name(pub Name);
 
