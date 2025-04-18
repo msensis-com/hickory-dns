@@ -23,7 +23,6 @@ use crate::serialize::binary::*;
 
 /// The DNS Record class
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
-#[cfg_attr(feature = "serde", serde(tag = "type", content = "data"))]
 #[derive(Debug, PartialEq, Eq, Hash, Copy, Clone)]
 #[allow(dead_code)]
 pub enum DNSClass {
