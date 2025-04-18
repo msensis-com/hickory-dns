@@ -592,6 +592,7 @@ impl fmt::Display for SvcParamValue {
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct Mandatory(pub Vec<SvcParamKey>);
 
@@ -774,6 +775,7 @@ impl fmt::Display for Mandatory {
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct Alpn(pub Vec<String>);
 
@@ -855,6 +857,7 @@ impl fmt::Display for Alpn {
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct EchConfigList(pub Vec<u8>);
 
@@ -957,6 +960,7 @@ impl fmt::Debug for EchConfigList {
 /// ```
 #[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct IpHint<T>(pub Vec<T>);
 
@@ -1030,8 +1034,9 @@ where
 ///   SvcParams in presentation format MAY appear in any order, but keys
 ///   MUST NOT be repeated.
 /// ```
-#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+#[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct Unknown(pub Vec<u8>);
 
