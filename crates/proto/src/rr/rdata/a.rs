@@ -52,8 +52,10 @@ use crate::{
 };
 
 /// The DNS A record type, an IPv4 address
-#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+#[cfg_attr(feature = "serde", serde(transparent))]
+#[repr(transparent)]
 pub struct A(pub Ipv4Addr);
 
 impl A {

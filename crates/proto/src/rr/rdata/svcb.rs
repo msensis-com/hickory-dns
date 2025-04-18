@@ -590,8 +590,8 @@ impl fmt::Display for SvcParamValue {
 ///    SHOULD NOT appear in the list either.  (Including them wastes space
 ///    and otherwise has no effect.)
 /// ```
-#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct Mandatory(pub Vec<SvcParamKey>);
@@ -773,8 +773,8 @@ impl fmt::Display for Mandatory {
 ///   supports the default transports.  This enables compatibility with the
 ///   greatest number of clients.
 /// ```
-#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct Alpn(pub Vec<String>);
@@ -855,8 +855,8 @@ impl fmt::Display for Alpn {
 ///   with TLS server software. To enable simpler parsing, this SvcParam MUST NOT contain escape
 ///   sequences.
 /// ```
-#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[derive(PartialEq, Eq, Hash, Clone)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 #[cfg_attr(feature = "serde", serde(transparent))]
 #[repr(transparent)]
 pub struct EchConfigList(pub Vec<u8>);
